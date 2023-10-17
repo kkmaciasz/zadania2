@@ -66,6 +66,35 @@ namespace cwiczenia2
             Console.WriteLine("Minimalna liczba z podanych to: {0}", min);
         }
 
+        static void zad24_skoki()
+        {
+            int K = 120;
+            double s = 1.8;
+            int max = int.MinValue;
+            int min = int.MaxValue;
+            double suma = 0;
+            Console.WriteLine("Długość skoku: ");
+            int d = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i < 6; i++)
+            {
+                Console.Write($"Podaj ocenę {i}: ");
+                int ocena = Convert.ToInt32(Console.ReadLine());
+                suma += ocena;
+                if (ocena > max)
+                {
+                    max = ocena;
+                }
+                if (ocena < min)
+                {
+                    min = ocena;
+                }
+            }
+            double ps = suma - min - max;
+            double pd = 60 + (d - K) * s;
+            double p = pd + ps;
+            Console.WriteLine($"Punkty: {p} ");
+        }
+
         static void zad25_silnia()
         {
             Console.Write("Podaj liczbę: ");
@@ -160,6 +189,7 @@ namespace cwiczenia2
             //zad21_srednia();
             //zad22_lokata();
             //zad23_minmax();
+            zad24_skoki();
             //zad25_silnia();
             //silnia_test();
             //zad26_pierwsza();
